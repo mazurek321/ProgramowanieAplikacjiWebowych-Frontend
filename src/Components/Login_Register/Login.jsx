@@ -1,14 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const loginData = {email, password};
+
+    try
+    {
+      const response = await fetch('http://localhost:5050/Users/login', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData)
+      });
+
+      if(!response.ok){
+        const errorData = await response.json();
+        setError(errorData)
+        console.log(error)
+        alert("User not found.");
+        return;
+      }
+      const token = await response.text();
+      localStorage.setItem("token", token)
+      navigate("/")
+    }
+    catch(error)
+    {
+      setError(error)
+    }
+
+  }
+
+
   return (
     <div className='Login container'>
       <p><Link to="/authorization/register">Register now</Link></p>
       
-      <form>
-        <input type="text" placeholder='email'/>  
-        <input type="password" placeholder='password'/>  
+      <form onSubmit={handleSubmit}>
+      <input 
+          type="email" 
+          placeholder='Email' 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          required
+        />
+        <input 
+          type="password" 
+          placeholder='Password' 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          required
+        /> 
         <button type='submit'>Login</button>
       </form>  
     </div>

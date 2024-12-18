@@ -6,6 +6,7 @@ import Authorization from "./Components/Login_Register/Authorization"
 import Login from "./Components/Login_Register/Login"
 import Register from "./Components/Login_Register/Register"
 import Announcements from "./Components/Announcements/Announcements"
+import Logout from "./Components/Login_Register/Logout"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="login" element={<Login/>}/>
           <Route path="register" element={<Register/>}/>
         </Route>
+        <Route path="/logout" element={<Logout/>} ></Route>
       </Routes>
      </BrowserRouter>
     </>
