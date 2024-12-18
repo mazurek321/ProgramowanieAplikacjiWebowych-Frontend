@@ -1,0 +1,29 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--background2);
+    justify-content: space-between;
+    padding: 1% 7%;
+    z-index: 10000;
+}
+
+nav ul{
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li{
+    transition: scale 100ms linear;
+    cursor: pointer;
+}
+
+nav ul li:not(.active):hover{
+    scale: 1.1;
+    transition: scale 100ms linear;
+}
+
+nav ul li.active{
+    font-weight: bold;
+}
