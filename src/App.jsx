@@ -7,11 +7,12 @@ import Login from "./Components/Login_Register/Login"
 import Register from "./Components/Login_Register/Register"
 import Announcements from "./Components/Announcements/Announcements"
 import Logout from "./Components/Login_Register/Logout"
+import { UserProvider } from "./Components/UserContext/UserContext"
 
 function App() {
 
   return (
-    <>
+    <UserProvider>
      <BrowserRouter>
       <Routes>
         <Route path="" element={<HomePage/>} ></Route>
@@ -25,7 +26,7 @@ function App() {
         <Route path="/logout" element={<Logout/>} ></Route>
       </Routes>
      </BrowserRouter>
-    </>
+    </UserProvider>
   )
 }
 
