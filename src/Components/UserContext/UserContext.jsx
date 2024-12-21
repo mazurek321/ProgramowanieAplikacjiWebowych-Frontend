@@ -47,8 +47,38 @@ export const UserProvider = ({children}) => {
         localStorage.removeItem('token');
     }
 
+    const register = async (registerData) => {
+        console.log(JSON.stringify(registerData))
+        try
+        {
+          const response = await fetch('http://localhost:5050/Users/register', {
+            method: 'POST',
+            headers:{
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                registerData
+            )
+          });
+    
+          if(!response.ok){
+            const errorData = await response.json();
+            console.log(errorData)
+            alert("Error while registering.");
+            return;
+          }
+
+          alert("Account created.")
+        }
+        catch(error)
+        {
+          alert("Error")
+          console.log(error)
+        }
+    }
+
     return(
-        <UserContext.Provider value={{user, login, logout}}>
+        <UserContext.Provider value={{user, login, logout, register}}>
             {children}
         </UserContext.Provider>
     );
