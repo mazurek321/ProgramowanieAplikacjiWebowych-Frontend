@@ -22,6 +22,7 @@ const Announcements = () => {
   return (
     <div className='Announcements container'>
       <Navbar active={"announcements"}/>
+      <button>Add announcement</button>
       {displayAnnouncement()}
     </div>
   )
