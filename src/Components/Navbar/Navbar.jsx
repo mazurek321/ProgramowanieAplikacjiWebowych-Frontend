@@ -12,8 +12,6 @@ const Navbar = ({active}) => {
         <ul>
             <li className={active == "home" ? 'active' : ''}><Link to="/">Home</Link></li>
             <li className={active == "announcements" ? 'active' : ''}><Link to="/announcements">Announcements</Link></li>
-            <li className={active == "users" ? 'active' : ''}><Link to="/users">Users</Link></li>
-            <li className={active == "cart" ? 'active' : ''}><Link to="/cart">Cart</Link></li>
         </ul>
         <ul>
             {user == null ? 

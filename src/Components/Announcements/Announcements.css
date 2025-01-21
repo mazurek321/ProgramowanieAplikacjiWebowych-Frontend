@@ -1,3 +1,38 @@
 .announcement{
     margin-top: 1em;
+    text-align: center;
+    background: lightgrey;
+    width: fit-content;
+    padding: 2em 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }
+
+button{
+    background: var(--background);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    bordeR: none;
+    cursor: pointer;
+}
+ .buttons{
+    gap: 1em;
+    margin-top: 5em;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .announcement h3{
+    margin: 1em;
+ }
+
+ .announcement p{
+    margin: 0.5em;
+ }
+
+ .announcements-display{
+    gap: 1em;
+    align-items: stretch;
+ }

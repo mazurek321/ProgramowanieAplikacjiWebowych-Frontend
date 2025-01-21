@@ -33,8 +33,9 @@ const Register = () => {
 
   return (
     <div className="Register container">
-      <p><Link to="/authorization/login">Login now</Link></p>
+      <p><Link to="/authorization/login" className='flex'>Login now <span className="material-symbols-outlined">arrow_forward</span></Link></p>
 
+      <h3>Register form</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="email"

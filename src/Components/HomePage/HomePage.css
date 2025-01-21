@@ -1,0 +1,17 @@
+.user-data{
+    /* background: var(--background); */
+    background: lightgrey;
+    width: fit-content;
+    padding: 3em;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #263849,
+                0 0 10px #41506b,
+                0 0 20px #35bcbf,
+                0 0 30px white
+    ;
+}
+
+.user-data h3{
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}

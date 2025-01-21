@@ -8,6 +8,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const {login} = useContext(UserContext);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,8 +46,9 @@ const Login = () => {
 
   return (
     <div className='Login container'>
-      <p><Link to="/authorization/register">Register now</Link></p>
+      <p><Link to="/authorization/register" className='flex'>Register now <span className="material-symbols-outlined">arrow_forward</span></Link></p>
       
+      <h3>Login form</h3>
       <form onSubmit={handleSubmit}>
       <input 
           type="email" 
