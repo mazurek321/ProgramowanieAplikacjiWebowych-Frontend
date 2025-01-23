@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className='Login container'>
-      <p><Link to="/authorization/register" className='flex'>Register now <span className="material-symbols-outlined">arrow_forward</span></Link></p>
+      <p><Link to="/authorization/register" className='flex'>Register now</Link></p>
       
       <h3>Login form</h3>
       <form onSubmit={handleSubmit}>

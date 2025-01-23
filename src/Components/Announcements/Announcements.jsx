@@ -142,7 +142,7 @@ const handleAddAnnouncement = async (e) => {
         <p>{announcement.item.description}</p>
         <p>Amount: <span>{announcement.item.amount.value}</span></p>
         <p>Cost: <span>{announcement.item.cost.value} zł</span></p>
-        {user != null && user.id.value == announcement.ownerId.value && (
+        {user != null && (user.id.value == announcement.ownerId.value || user.role.value == "admin") && (
           <div className="buttons flex">
             <button onClick={() => handleUpdate(announcement.id)}>Update</button>
             <button onClick={() => handleDelete(announcement.id)}>Delete</button>
